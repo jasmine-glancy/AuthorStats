@@ -1,9 +1,12 @@
 "use client";
 
+import AverageWidget from "./averageWidget";
 import { useEffect } from "react";
 import { Tabs } from "flowbite";
+import ProgressTable from "./progressTable";
 import type { TabsOptions, TabsInterface, TabItem } from "flowbite";
 import type { InstanceOptions } from "flowbite";
+import WritingSpeedWidget from "./writingSpeedWidget";
 
 
 export default function tabbedTable() {
@@ -65,7 +68,7 @@ export default function tabbedTable() {
         const tabs: TabsInterface = new Tabs(tabsElement, tabElements, options, instanceOptions);
 
         // open tab item based on id
-        tabs.show("graphs");
+        tabs.show("averages");
     }, []);
 
     return (
@@ -128,20 +131,17 @@ export default function tabbedTable() {
         </div>
         <div id="tabContentExample">
           <div
-            className="hidden rounded-[1em] border-1 border-solid border-[var(--dark_purple)] bg-linear-to-b from-[var(--linen)] to-[var(--dove_gray)] p-4 dark:bg-gray-800"
             id="progressLogs"
             role="tabpanel"
             aria-labelledby="progressLogs-tab"
           >
             {/* TODO: Show table with the date completed and entry word count */}
+            <div className="flex inline-flex gap-[5em]">
+              <ProgressTable progLog={true} />
+              <ProgressTable dailyLog={true} />
+              <ProgressTable overallProgGoals={true} />
+            </div>
             {/* TODO: Each entry should have the option to delete it */}
-            I'm baby shoreditch mumblecore church-key direct trade typewriter
-            distillery. Ugh organic wayfarers tattooed selfies vexillologist pug
-            craft beer before they sold out air plant mixtape same hot chicken
-            praxis leggings. Butcher shoreditch mumblecore hashtag twee,
-            gluten-free cornhole yuccie umami distillery live-edge freegan. Same
-            viral beard cupping microdosing heirloom fixie leggings photo booth.
-            Meh pug beard sartorial man braid jean shorts.
             {/* TODO: Inform user of when they will achieve their goal */}
           </div>
           <div
@@ -150,6 +150,8 @@ export default function tabbedTable() {
             role="tabpanel"
             aria-labelledby="worldBuildingStats-tab"
           >
+            {/* TODO: Show time spent character building */}
+            {/* TODO: Show time spent world building */}
             Sartorial adaptogen echo park PBR&B. Roof party keffiyeh live-edge,
             kickstarter raw denim tonx truffaut normcore. Same tattooed yr ugh
             coloring book. Keffiyeh vibecession cupping, banjo twee chia af. 3
@@ -157,24 +159,21 @@ export default function tabbedTable() {
             neutral milk hotel tbh lo-fi actually taxidermy.
           </div>
           <div
-            className="hidden rounded-[1em] border-1 border-solid border-[var(--dark_purple)] bg-linear-to-b from-[var(--linen)] to-[var(--dove_gray)] p-4 dark:bg-gray-800"
+            className="hidden"
             id="averages"
             role="tabpanel"
             aria-labelledby="averages-tab"
           >
-            {/* TODO: Calculate average writing time of day */}
-            {/* TODO: Calculate writing speed in words per minute */}
-            {/* TODO: Display average mood */}
-            {/* TODO: Display average word count per day */}
-            {/* TODO: Display average word count per session */}
-            {/* TODO: Inform the user whether they spend more time writing or worldbuilding */}
-            {/* TODO: Show where the user has written the most often */}
-            Ugh poutine trust fund tumblr craft beer meh tousled air plant
-            disrupt. Kinfolk cloud bread farm-to-table cronut. Shabby chic DSA
-            raclette truffaut artisan. Pour-over marfa synth mukbang you
-            probably haven't heard of them. Stumptown live-edge pickled
-            literally, cloud bread migas everyday carry glossier DIY portland
-            whatever.
+            <div className="grid grid-cols-4 gap-[1em]">
+              <WritingSpeedWidget />
+              <AverageWidget averageMood={true} />
+              <AverageWidget averageSessionWriteTime={true} />
+              <AverageWidget averageWordCountPerDay={true} />
+              <AverageWidget writingOrWorldBuilding={true} />
+              <AverageWidget averageWritingPlace={true} />
+              <AverageWidget mostContributedTo={true} />
+              <AverageWidget mostWritten={true} />
+            </div>
           </div>
           <div
             className="hidden rounded-[1em] border-1 border-solid border-[var(--dark_purple)] bg-linear-to-b from-[var(--linen)] to-[var(--dove_gray)] p-4 dark:bg-gray-800"

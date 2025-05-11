@@ -1,7 +1,7 @@
 
 type TrackerTypes = {
     totalTracker?: boolean;
-}
+};
 
 export default function radialTracker({totalTracker}: TrackerTypes) {
     return (
