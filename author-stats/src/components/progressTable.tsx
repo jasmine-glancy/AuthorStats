@@ -9,14 +9,25 @@ export default function progressTable({progLog, dailyLog, overallProgGoals}: Tab
         <div>
             {
                 progLog ? (
-                    <table className="rounded-[1em] border-1 border-solid border-[var(--dark_purple)] bg-linear-to-b from-[var(--linen)] to-[var(--dove_gray)] border-separate">
+                    <table className="rounded-[1em] text-center border-1 border-solid border-[var(--dark_purple)] bg-linear-to-b from-[var(--linen)] to-[var(--dove_gray)] border-separate">
+                        <caption className="font-bold text-[var(--amethyst)] p-2">Progress Updates</caption>
+                        <thead>
+                                <tr>
+                                    <th className="pl-5 pt-2 pb-2 pr-2 rounded-l-[1em]">
+                                        Date
+                                    </th>
+                                    <th className="pl-2 pt-2 pr-2 pb-2">
+                                        Session Count
+                                    </th>
+                                </tr>
+                            </thead>
                         <tbody>
                             <tr>
                                 <td className="pl-5 pt-2 pb-2 pr-2 rounded-l-[1em]">
-                                    mmm dd, yyyy
+                                    May 11, 2025
                                 </td>
                                 <td className="pl-2 pt-2 pb-2 pr-2 hover:text-[var(--tropical_indigo)]">
-                                    xxx words
+                                    500 words
                                 </td>
                                 <td className="pl-2 pt-2 pb-2 pr-5 rounded-r-[1em]">
                                     <img onMouseOver={(e) => e.currentTarget.src = "/trash-hover.svg"}
@@ -28,10 +39,10 @@ export default function progressTable({progLog, dailyLog, overallProgGoals}: Tab
                             </tr>
                             <tr>
                                 <td className="pl-5 pt-2 pb-2 pr-2">
-                                    mmm dd, yyyy
+                                    May 11, 2025
                                 </td>
                                 <td className="pl-2 pt-2 pb-2 pr-2 hover:text-[var(--tropical_indigo)]">
-                                    xxx words
+                                    250 words
                                 </td>
                                 <td className="pl-2 pt-2 pb-2 pr-5">
                                     <img onMouseOver={(e) => e.currentTarget.src = "/trash-hover.svg"}
@@ -43,10 +54,10 @@ export default function progressTable({progLog, dailyLog, overallProgGoals}: Tab
                             </tr>
                             <tr>
                                 <td className="pl-5 pt-2 pr-2 pb-2">
-                                    mmm dd, yyyy
+                                    May 12, 2025
                                 </td>
                                 <td className="pl-2 pt-2 pr-2 pb-2 hover:text-[var(--tropical_indigo)]">
-                                    xxx words
+                                    1,000 words
                                 </td>
                                 <td className="pl-2 pt-2 pr-5 pb-2">
                                     <img onMouseOver={(e) => e.currentTarget.src = "/trash-hover.svg"}
@@ -64,30 +75,41 @@ export default function progressTable({progLog, dailyLog, overallProgGoals}: Tab
             }
             {
                 dailyLog ? (
-                    <table className="rounded-[1em] border-1 border-solid border-[var(--dark_purple)] bg-linear-to-b from-[var(--linen)] to-[var(--dove_gray)] border-separate">
+                    <table className="rounded-[1em] border-1 text-center border-solid border-[var(--dark_purple)] bg-linear-to-b from-[var(--linen)] to-[var(--dove_gray)] border-separate">
+                        <caption className="font-bold text-[var(--amethyst)] p-2">Daily Progress</caption>
+                        <thead>
+                                <tr>
+                                    <th className="pl-5 pt-2 pb-2 pr-2 rounded-l-[1em]">
+                                        Date
+                                    </th>
+                                    <th className="pl-2 pt-2 pr-2 pb-2">
+                                        Daily Total
+                                    </th>
+                                </tr>
+                        </thead>
                         <tbody>
                             <tr>
                                 <td className="pl-5 pt-2 pb-2 pr-2 rounded-l-[1em]">
-                                    mmm dd, yyyy
+                                    May 10, 2025
                                 </td>
                                 <td className="pl-2 pt-2 pb-2 pr-5 hover:text-[var(--tropical_indigo)]">
-                                    xxx words
+                                    250 words
                                 </td>
                             </tr>
                             <tr>
                                 <td className="pl-5 pt-2 pb-2 pr-2">
-                                    mmm dd, yyyy
+                                    May 11, 2025
                                 </td>
                                 <td className="pl-2 pt-2 pb-2 pr-5 hover:text-[var(--tropical_indigo)]">
-                                    xxx words
+                                    750 words
                                 </td>
                             </tr>
                             <tr>
                                 <td className="pl-5 pt-2 pr-2 pb-2">
-                                    mmm dd, yyyy
+                                    May 12, 2025
                                 </td>
                                 <td className="pl-2 pt-2 pr-5 pb-2 hover:text-[var(--tropical_indigo)]">
-                                    xxx words
+                                    1,000 words
                                 </td>
                             </tr>
                         </tbody>
@@ -99,6 +121,7 @@ export default function progressTable({progLog, dailyLog, overallProgGoals}: Tab
             {
                 overallProgGoals ? (
                     <table className="rounded-[1em] text-center border-1 border-solid border-[var(--dark_purple)] bg-linear-to-b from-[var(--linen)] to-[var(--dove_gray)] border-separate">
+                        <caption className="font-bold text-[var(--amethyst)] p-2">Goal Progress</caption>
                         <thead>
                             <tr>
                                 <th className="pl-5 pt-2 pb-2 pr-2 rounded-l-[1em]">
@@ -115,24 +138,35 @@ export default function progressTable({progLog, dailyLog, overallProgGoals}: Tab
                         <tbody>
                             <tr>
                                 <td className="pl-5 pt-2 pb-2 pr-2 rounded-l-[1em]">
-                                    mm/dd/yyyy
+                                    5/10/2025
                                 </td>
                                 <td className="pl-2 pt-2 pr-2 pb-2 hover:text-[var(--tropical_indigo)]">
-                                    123
+                                    250
                                 </td>
                                 <td className="pl-2 pt-2 pb-2 pr-5">
-                                    500
+                                    1,000
                                 </td>
                             </tr>
                             <tr>
                                 <td className="pl-5 pt-2 pb-2 pr-2 rounded-l-[1em]">
-                                    mm/dd/yyyy
+                                    5/11/2025
                                 </td>
                                 <td className="pl-2 pt-2 pr-2 pb-2 hover:text-[var(--tropical_indigo)]">
-                                    123
+                                    1,000
                                 </td>
                                 <td className="pl-2 pt-2 pb-2 pr-5">
-                                    500
+                                    1,000
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className="pl-5 pt-2 pb-2 pr-2 rounded-l-[1em]">
+                                    5/12/2025
+                                </td>
+                                <td className="pl-2 pt-2 pr-2 pb-2 hover:text-[var(--tropical_indigo)]">
+                                    2,000
+                                </td>
+                                <td className="pl-2 pt-2 pb-2 pr-5">
+                                    5,000
                                 </td>
                             </tr>
                         </tbody>

@@ -20,10 +20,10 @@ export default function radialTracker({totalTracker}: TrackerTypes) {
             ) : (
                 <div className="flex items-center gap-[4em] ml-[1em]">
                     {/* TODO: Percentage changes depending on the user's progress made  */}
-                    <div className="radial-progress text-[var(--amethyst)]" style={{ "--value": 25 } as React.CSSProperties}
-                        aria-valuenow={25} role="progressbar">25%</div>
+                    <div className="radial-progress text-[var(--amethyst)]" style={{ "--value": 40 } as React.CSSProperties}
+                        aria-valuenow={40} role="progressbar">40%</div>
                     <div className="ml-4">
-                        <h2 className="text-[var(--tropical_indigo)]">xxx/10,000</h2>
+                        <h2 className="text-[var(--tropical_indigo)]">xxx/5,000</h2>
                         <h3>Total Words</h3>
                     </div>
                 </div>

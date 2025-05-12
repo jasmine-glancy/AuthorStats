@@ -1,9 +1,12 @@
 "use client";
 
 import AverageWidget from "./averageWidget";
+import BarChart from "./barChart";
+import LineChart from "./lineChart";
 import { useEffect } from "react";
 import { Tabs } from "flowbite";
 import ProgressTable from "./progressTable";
+import PieChart from "./pieChart";
 import type { TabsOptions, TabsInterface, TabItem } from "flowbite";
 import type { InstanceOptions } from "flowbite";
 import WritingSpeedWidget from "./writingSpeedWidget";
@@ -25,9 +28,9 @@ export default function tabbedTable() {
                 targetEl: document.querySelector("#progressLogs") as HTMLElement,
             },
             {
-                id: "worldBuildingStats",
-                triggerEl: document.querySelector("#worldBuildingStats-tab") as HTMLElement,
-                targetEl: document.querySelector("#worldBuildingStats") as HTMLElement,
+                id: "timeAllocations",
+                triggerEl: document.querySelector("#timeAllocations-tab") as HTMLElement,
+                targetEl: document.querySelector("#timeAllocations") as HTMLElement,
             },
             {
                 id: "averages",
@@ -94,13 +97,13 @@ export default function tabbedTable() {
             <li className="me-2" role="presentation">
               <button
                 className="inline-block rounded-t-lg border-b-2 border-transparent p-4 hover:border-[var(--amethyst)] hover:text-[var(--tropical_indigo)] dark:hover:text-[var(--linen)]"
-                id="worldBuildingStats-tab"
+                id="timeAllocations-tab"
                 type="button"
                 role="tab"
-                aria-controls="worldBuildingStats"
+                aria-controls="timeAllocations"
                 aria-selected="false"
               >
-                World-Building
+                Time Allocations
               </button>
             </li>
             <li className="me-2" role="presentation">
@@ -136,7 +139,7 @@ export default function tabbedTable() {
             aria-labelledby="progressLogs-tab"
           >
             {/* TODO: Show table with the date completed and entry word count */}
-            <div className="flex inline-flex gap-[5em]">
+            <div className="flex inline-flex gap-[4em]">
               <ProgressTable progLog={true} />
               <ProgressTable dailyLog={true} />
               <ProgressTable overallProgGoals={true} />
@@ -145,18 +148,14 @@ export default function tabbedTable() {
             {/* TODO: Inform user of when they will achieve their goal */}
           </div>
           <div
-            className="hidden rounded-[1em] border-1 border-solid border-[var(--dark_purple)] bg-linear-to-b from-[var(--linen)] to-[var(--dove_gray)] p-4 dark:bg-gray-800"
-            id="worldBuildingStats"
+            className="hidden"
+            id="timeAllocations"
             role="tabpanel"
-            aria-labelledby="worldBuildingStats-tab"
+            aria-labelledby="timeAllocations-tab"
           >
             {/* TODO: Show time spent character building */}
             {/* TODO: Show time spent world building */}
-            Sartorial adaptogen echo park PBR&B. Roof party keffiyeh live-edge,
-            kickstarter raw denim tonx truffaut normcore. Same tattooed yr ugh
-            coloring book. Keffiyeh vibecession cupping, banjo twee chia af. 3
-            wolf moon man bun kickstarter, single-origin coffee forage chia
-            neutral milk hotel tbh lo-fi actually taxidermy.
+            <PieChart />
           </div>
           <div
             className="hidden"
@@ -176,23 +175,21 @@ export default function tabbedTable() {
             </div>
           </div>
           <div
-            className="hidden rounded-[1em] border-1 border-solid border-[var(--dark_purple)] bg-linear-to-b from-[var(--linen)] to-[var(--dove_gray)] p-4 dark:bg-gray-800"
+            className="hidden"
             id="graphs"
             role="tabpanel"
             aria-labelledby="graphs-tab"
           >
             {/* TODO: Show overall progress */}
+            <BarChart />
               {/* TODO: Show overall progress line chart */}
-              {/* TODO: Show overall progress graph chart */}
+              {/* TODO: Show overall progress bar chart */}
               {/* TODO: Show overall progress table */}
             {/* TODO: Show daily word count progress */}
+            <LineChart />
               {/* TODO: Show daily progress line chart */}
-              {/* TODO: Show daily progress graph chart */}
+              {/* TODO: Show daily progress bar chart */}
               {/* TODO: Show daily progress table */}
-            Celiac poutine microdosing 3 wolf moon disrupt af. Man bun DIY
-            portland, dreamcatcher thundercats intelligentsia pickled waistcoat
-            tofu. Pour-over woke quinoa, slow-carb pickled godard offal
-            snackwave locavore celiac migas.
           </div>
         </div>
       </div>
