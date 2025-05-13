@@ -148,7 +148,7 @@ export default function tabbedTable() {
             {/* TODO: Inform user of when they will achieve their goal */}
           </div>
           <div
-            className="hidden"
+            className="hidden p-2"
             id="timeAllocations"
             role="tabpanel"
             aria-labelledby="timeAllocations-tab"
