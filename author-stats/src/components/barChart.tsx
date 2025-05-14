@@ -1,8 +1,11 @@
 import { Chart, ChartConfiguration } from "chart.js";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function barChart() {
     const labels = ["May 5, 2025", "May 7, 2025", "May 9, 2025", "May 10, 2025", "May 12, 2025"];
+    const chartRef = useRef<Chart | null>(null);
+
+    
     const dataBar = {
         labels: labels,
         datasets: [{
@@ -43,9 +46,20 @@ export default function barChart() {
         if (canvas) {
             const context = canvas.getContext("2d");
             if (context) {
-                new Chart(context, configBar);
+                // Destroy the previous chart if it exists
+                if (chartRef.current) {
+                    chartRef.current.destroy();
+                }
+                chartRef.current = new Chart(context, configBar);
             }
         }
+        
+        // Remove the unmounted
+        return () => {
+            if (chartRef.current) {
+                chartRef.current.destroy();
+            }
+        };
     }, []);
 
     return(

@@ -1,8 +1,10 @@
 import { Chart, ChartConfiguration, registerables } from "chart.js";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function pieChart() {
     Chart.register(...registerables);
+    const chartRef = useRef<Chart | null>(null);
+
     const dataPie = {
         labels: ["Writing", "Worldbuilding", "Marketing"],
         datasets: [
@@ -30,9 +32,20 @@ export default function pieChart() {
         if (canvas) {
             const context = canvas.getContext("2d");
             if (context) {
-                new Chart(context, configPie);
+                // Destroy the previous chart if it exists
+                if (chartRef.current) {
+                    chartRef.current.destroy();
+                }
+                chartRef.current = new Chart(context, configPie);
             }
         }
+
+        // Remove the unmounted
+        return () => {
+            if (chartRef.current) {
+                chartRef.current.destroy();
+            }
+        };
     }, []);
 
     // TODO: Load in user's data

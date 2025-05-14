@@ -1,9 +1,24 @@
+"use client";
+
 import DayStreak from "@/components/dayStreak";
+import Loading from "@/components/loading";
 import RadialTacker from "@/components/radialTracker";
 import TabbedTable from "@/components/tabbedTable";
+import { useEffect, useState } from "react";
 import Header from "@/components/header";
 
 export default function Home() {
+  const [pageLoaded, setPageLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setPageLoaded(true), 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!pageLoaded) {
+    return <Loading />;
+  }
+
   return (
     <div>
         <div className="max-w-[200em] bg-[var(--dove_gray)] border-5 border-double border-[var(--tropical_indigo)] pt-10 text-[var(--dark_purple)] rounded-[2em]">

@@ -1,9 +1,12 @@
 import { Chart, ChartConfiguration } from "chart.js";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function lineChart() {
 
     const labels = ["May 5, 2025", "May 7, 2025", "May 9, 2025", "May 10, 2025", "May 12, 2025"];
+    const chartRef = useRef<Chart | null>(null);
+    
+    
     const dataLine = {
         labels: labels,
         datasets: [{
@@ -27,9 +30,18 @@ export default function lineChart() {
         if (canvas) {
             const context = canvas.getContext("2d");
             if (context) {
-                new Chart(context, configLine);
+                if (chartRef.current) {
+                    chartRef.current.destroy();
+                }
+                chartRef.current = new Chart(context, configLine);
             }
         }
+        
+        return () => {
+            if (chartRef.current) {
+                chartRef.current.destroy();
+            }
+        };
     }, []);
 
     return(
