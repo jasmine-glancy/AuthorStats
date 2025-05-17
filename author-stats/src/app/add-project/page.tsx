@@ -1,4 +1,5 @@
 import Header from "@/components/header";
+import Input from "@/components/input";
 
 export default function addProject() {
     
@@ -9,11 +10,7 @@ export default function addProject() {
                 <Header />
                 <div className="flex flex-col items-center justify-center">
                     <h2 className="underline">Add a New Project</h2>
-                    <fieldset className="fieldset">
-                        <legend className="fieldset-legend">What is your name?</legend>
-                        <input type="text" className="input" placeholder="Type here" />
-                        <p className="label">Optional</p>
-                    </fieldset>
+                    <Input fieldLegend="What is your project called? (You can change this later!)" placeholder="Or enter unsure if you are unsure" isOptional={true} />
                 </div>
             </div>
             </main>
