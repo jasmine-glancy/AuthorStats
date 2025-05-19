@@ -1,4 +1,6 @@
 
+import Link from "next/link";
+
 export default function footer () {
     return(
         <footer className="footer sm:footer-horizontal bg-[var(--dove_gray)] border-5 border-double border-[var(--tropical_indigo)] rounded-[2em] text-[var(--dark_purple)] mt-5 p-10">
@@ -8,19 +10,19 @@ export default function footer () {
             <nav>
                 <h6 className="footer-title">Profile</h6>
                 {/* TODO: change to view profile and log out when the user is logged in */}
-                <a className="link link-hover">Log In</a>
-                <a className="link link-hover">Register</a>
+                <Link href="" className="link link-hover">Log In</Link>
+                <Link href="" className="link link-hover">Register</Link>
             </nav>
             <nav>
                 <h6 className="footer-title">Projects</h6>
-                <a className="link link-hover">Add a New Project</a>
-                <a className="link link-hover">Edit Existing Project</a>
-                <a className="link link-hover">View Projects</a>
+                <Link href="/add-project" className="link link-hover">Add a New Project</Link>
+                <Link href="" className="link link-hover">Edit Existing Project</Link>
+                <Link href="" className="link link-hover">View Projects</Link>
             </nav>
             <nav>
                 <h6 className="footer-title">Company</h6>
-                <a className="link link-hover">About Us</a>
-                <a className="link link-hover">Contact Us</a>
+                <Link href="" className="link link-hover">About Us</Link>
+                <Link href="" className="link link-hover">Contact Us</Link>
             </nav>
 
         </footer>

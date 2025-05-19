@@ -7,11 +7,11 @@ export default function Header() {
             <div className="grid justify-center items-center">
                 <h1 className="pt-5 pr-10 font-bold underline decoration-solid">Author Stats</h1>   
                 <div className="grid justify-center inline-flex">
-                    <Link href="" className="text-[var(--tropical_indigo)] hover:text-[var(--amethyst)]">
+                    <Link href="/log-in" className="text-[var(--tropical_indigo)] hover:text-[var(--amethyst)]">
                         <h2>Login</h2>
                     </Link>
                     <span className="pl-[5%] pr-[5%] pt-[1%]">|</span>
-                    <Link href="" className="pr-10 text-[var(--tropical_indigo)] hover:text-[var(--amethyst)]">
+                    <Link href="/register" className="pr-10 text-[var(--tropical_indigo)] hover:text-[var(--amethyst)]">
                         <h2>Register</h2>
                     </Link>
                 </div>
@@ -21,7 +21,9 @@ export default function Header() {
                     Welcome,<p className="text-[var(--amethyst)] pl-1"> admin</p>!
                 </div>
             </div>
-            <img src="/icon.svg" alt="Books" className="w-[8em]"/>
+            <Link href="/">
+                <img src="/icon.svg" alt="Books" className="w-[8em]"/>
+            </Link>
         </div>
     );
 }

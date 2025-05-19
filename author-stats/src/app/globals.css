@@ -29,6 +29,7 @@
   }
 }
 
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   @apply grid items-center justify-items-center min-h-screen bg-linear-to-b from-[var(--dark_purple)] to-[var(--tropical_indigo)] sm:p-[2em];
@@ -43,5 +44,9 @@ h2 {
 }
 
 .footer-title {
-  @apply text-[var(--amethyst)]
+  @apply text-[var(--amethyst)];
+}
+
+.fieldset-legend {
+  @apply text-lg text-balance w-[15em] flex justify-center;
 }
