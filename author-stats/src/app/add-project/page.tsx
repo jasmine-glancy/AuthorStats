@@ -1,7 +1,12 @@
+"use client";
+
+import { useState } from "react";
 import Header from "@/components/header";
 import Input from "@/components/input";
 
 export default function addProject() {
+    const [startDate, setStartDate] = useState<Date | undefined>();
+    const [endDate, setEndDate] = useState<Date | undefined>();
     
     return (
         <div>
@@ -11,8 +16,28 @@ export default function addProject() {
                 <div className="flex flex-col items-center justify-center">
                     <h2 className="font-bold">Add a New Project</h2>
                     <div className="grid grid-cols-2 pt-5 gap-[5em]">
-                        <Input fieldLegend="What is your project called? (You can change this later!)" placeholder="Or enter unsure if you are unsure" isNumber={false} validator="Please enter a value" />
-                        <Input fieldLegend="What is your word count goal?" placeholder="Or enter unsure if you are unsure" isNumber={true} validator="Please enter a number" />
+                        <Input 
+                            fieldLegend="What is your project called? (You can change this later!)"
+                            placeholder="Or enter unsure if you are unsure"
+                            isNumber={false}
+                            validator="Please enter a value" />
+                        <Input 
+                            fieldLegend="What is your word count goal?"
+                            placeholder="Or enter unsure if you are unsure" 
+                            isNumber={true}
+                            validator="Please enter a number" />
+                        <Input 
+                            fieldLegend="What is your start date?"
+                            validator="Please choose a date"
+                            isDate={true}
+                            date={startDate}
+                            setDate={setStartDate} />
+                        <Input
+                            fieldLegend="What is your end date?"
+                            validator="Please choose a date" 
+                            isDate={true}
+                            date={endDate}
+                            setDate={setEndDate} />
                     </div>
                 </div>
             </div>

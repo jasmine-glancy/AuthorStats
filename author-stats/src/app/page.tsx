@@ -6,6 +6,7 @@ import RadialTacker from "@/components/radialTracker";
 import TabbedTable from "@/components/tabbedTable";
 import { useEffect, useState } from "react";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 export default function Home() {
   const [pageLoaded, setPageLoaded] = useState(false);
@@ -32,6 +33,7 @@ export default function Home() {
             <TabbedTable />
           </div>
         </div>
+        <Footer />
     </div>
   );
 }

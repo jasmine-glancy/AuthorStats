@@ -9,6 +9,7 @@
   --linen: #F7ECE1;
   --color-success: #8D86C9;
   --color-base-content: #8D86C9;
+  --color-primary: #9067C6;
 }
 
 @theme inline {
@@ -39,4 +40,8 @@ h1 {
 
 h2 {
   @apply text-2xl;
+}
+
+.footer-title {
+  @apply text-[var(--amethyst)]
 }
