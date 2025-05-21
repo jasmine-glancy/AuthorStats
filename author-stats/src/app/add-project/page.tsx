@@ -47,7 +47,13 @@ export default function addProject() {
                             setDate={setEndDate}
                             pickerOpen={endPickerOpen}
                             setPickerOpen={setEndPickerOpen} />
-                        <Select />
+
+                        {/* TODO: Load in genres from MongoDB's database */}
+                        <div className="col-span-2 flex justify-center pb-5">
+                            <Select 
+                                name="What genre is your project?"
+                                options={["Action/Adventure", "Children's Fiction", "Classic Fiction", "Contemporary Fiction", "Fantasy", "Dark Fantasy", "Fairy Tales", "Folktales", "Heroic Fantasy", "High Fantasy", "Historical Fantasy", "Low Fantasy", "Magical Realism", "Mythic Fantasy", "Urban Fantasy"]} />
+                        </div>
                     </div>
                     <button className="btn btn-soft btn-primary text-[var(--tropical_indigo)] hover:text-[var(--dark_purple)] hover:bg-linear-to-t from-[var(--amethyst)] to-[var(--tropical_indigo)] btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl mb-10 mt-5">
                         Add Project
