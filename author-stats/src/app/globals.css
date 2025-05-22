@@ -10,6 +10,7 @@
   --color-success: #8D86C9;
   --color-base-content: #8D86C9;
   --color-primary: #9067C6;
+  --color-error: #9067C6;
 }
 
 @theme inline {
@@ -49,4 +50,12 @@ h2 {
 
 .fieldset-legend {
   @apply text-lg text-balance w-[15em] flex justify-center;
+}
+
+.validator-hint {
+  @apply text-[var(--amethyst)] text-lg 
+}
+
+.validator {
+  @apply border-2 border-[var(--amethyst)] rounded focus:border-[var(--amethyst)] focus:ring-2 focus:ring-[var(--amethyst)]
 }
