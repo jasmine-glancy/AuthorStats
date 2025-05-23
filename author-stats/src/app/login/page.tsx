@@ -27,7 +27,7 @@ export default function login() {
                         } placeholder="Password" />
                     </div>
                     <div className="flex justify-center">
-                        <button className="btn btn-soft btn-primary text-[var(--tropical_indigo)] hover:text-[var(--dark_purple)] hover:bg-linear-to-t from-[var(--amethyst)] to-[var(--tropical_indigo)] btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl mb-10 mt-5">
+                        <button className="btn-primary mb-10 mt-5">
                             Login
                         </button>
                     </div>

@@ -10,14 +10,14 @@ export default function footer () {
             <nav>
                 <h6 className="footer-title">Profile</h6>
                 {/* TODO: change to view profile and log out when the user is logged in */}
-                <Link href="" className="link link-hover">Log In</Link>
+                <Link href="/login" className="link link-hover">Log In</Link>
                 <Link href="" className="link link-hover">Register</Link>
             </nav>
             <nav>
                 <h6 className="footer-title">Projects</h6>
                 <Link href="/add-project" className="link link-hover">Add a New Project</Link>
-                <Link href="" className="link link-hover">Edit Existing Project</Link>
-                <Link href="" className="link link-hover">View Projects</Link>
+                <Link href="/edit-project" className="link link-hover">Edit Existing Project</Link>
+                <Link href="/view-projects" className="link link-hover">View Projects</Link>
             </nav>
             <nav>
                 <h6 className="footer-title">Company</h6>

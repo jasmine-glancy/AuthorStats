@@ -130,9 +130,9 @@ export default function input({ fieldLegend, placeholder, isOptional,
                             type="password"
                             required
                             placeholder={placeholder}
-                            minLength="8"
+                            minLength={8}
                             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                            className="w-[15em] text-center"
+                            className="w-[18em] text-center"
                             title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
                         />
                         </label>

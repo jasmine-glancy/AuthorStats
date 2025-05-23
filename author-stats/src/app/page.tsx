@@ -1,15 +1,19 @@
 "use client";
 
 import DayStreak from "@/components/dayStreak";
+import { getServerSession } from "next-auth";
 import Loading from "@/components/loading";
 import RadialTacker from "@/components/radialTracker";
 import TabbedTable from "@/components/tabbedTable";
+import { options } from "./api/auth/[...nextauth]/options";
 import { useEffect, useState } from "react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
 export default function Home() {
   const [pageLoaded, setPageLoaded] = useState(false);
+
+  // const session = await getServerSession(options);
 
   useEffect(() => {
     const timer = setTimeout(() => setPageLoaded(true), 1500);
