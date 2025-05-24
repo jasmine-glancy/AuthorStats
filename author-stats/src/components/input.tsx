@@ -25,7 +25,7 @@ export default function input({ fieldLegend, placeholder, isOptional,
                                 isPassword, setDate, pickerOpen, 
                                 setPickerOpen }: inputTypes) {
     return(
-        <fieldset className="fieldset">
+        <>
             {isNumber ? (
                 <>
                     <legend className="fieldset-legend">{fieldLegend}</legend>
@@ -50,8 +50,6 @@ export default function input({ fieldLegend, placeholder, isOptional,
                         <p className="validator-hint">{validator}</p>
                     </>
                 ) : isDate && setDate && setPickerOpen ? ( 
-
-                    
                     <>
                         <legend className="fieldset-legend">{fieldLegend}</legend>
                         <button 
@@ -101,11 +99,11 @@ export default function input({ fieldLegend, placeholder, isOptional,
                             pattern="[A-Za-z][A-Za-z0-9\-]*"
                             minLength={3}
                             maxLength={30}
-                            className="w-[15em] text-center"
+                            className="text-center"
                             title="Only letters, numbers or dash"
                         />
                         </label>
-                        <p className="validator-hint pb-2">
+                        <p className="validator-hint hidden">
                             {validator}
                         </p>
                     </>
@@ -153,7 +151,7 @@ export default function input({ fieldLegend, placeholder, isOptional,
                 <p className="label">Optional</p>
             } 
 
-        </fieldset>
+        </>
 
     );
 }

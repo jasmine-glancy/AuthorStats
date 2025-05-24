@@ -11,7 +11,7 @@ export default function footer () {
                 <h6 className="footer-title">Profile</h6>
                 {/* TODO: change to view profile and log out when the user is logged in */}
                 <Link href="/login" className="link link-hover">Log In</Link>
-                <Link href="" className="link link-hover">Register</Link>
+                <Link href="/register" className="link link-hover">Register</Link>
             </nav>
             <nav>
                 <h6 className="footer-title">Projects</h6>

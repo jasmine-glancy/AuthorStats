@@ -1,4 +1,5 @@
 export default function projectCard() {
+  // TODO: Clicking the project card takes the user to the project's page
   return (
     <div>
       <div className="card w-[29em] bg-linear-to-b from-[var(--linen)] to-[var(--dove_gray)] card-xl shadow-sm m-5">
@@ -20,9 +21,10 @@ export default function projectCard() {
             health goth meditation whatever authentic echo park seitan ennui
             tofu.
           </p>
+          <div className="grid grid-cols-2 gap-[2em]">
+            <button className="btn btn-active h-[4em] disabled">Primary Genre Here</button>
+            <button className="btn btn-active h-[4em] disabled">Secondary Genre</button>
 
-          <div className="justify-end card-actions">
-            <button className="btn btn-primary">Buy Now</button>
           </div>
         </div>
       </div>
