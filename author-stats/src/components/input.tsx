@@ -25,7 +25,7 @@ export default function input({ fieldLegend, placeholder, isOptional,
                                 isPassword, setDate, pickerOpen, 
                                 setPickerOpen }: inputTypes) {
     return(
-        <>
+        <fieldset>
             {isNumber ? (
                 <>
                     <legend className="fieldset-legend">{fieldLegend}</legend>
@@ -151,7 +151,7 @@ export default function input({ fieldLegend, placeholder, isOptional,
                 <p className="label">Optional</p>
             } 
 
-        </>
+        </fieldset>
 
     );
 }
