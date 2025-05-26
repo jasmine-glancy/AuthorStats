@@ -2,7 +2,7 @@ export default function projectCard() {
   // TODO: Clicking the project card takes the user to the project's page
   return (
     <div>
-      <div className="card w-[29em] bg-linear-to-b from-[var(--linen)] to-[var(--dove_gray)] card-xl shadow-sm m-5">
+      <div className="hover:cursor-pointer card w-[29em] bg-linear-to-b from-[var(--linen)] to-[var(--dove_gray)] card-xl shadow-sm m-5">
         <div className="card-body">
           <div className="flex justify-center">
             <progress

@@ -4,16 +4,16 @@ import { DayPicker } from "react-day-picker";
 
 
 type inputTypes = {
-    fieldLegend: string;
+    fieldLegend?: string;
     placeholder?: string;
     isOptional?: boolean;
     isNumber?: boolean;
     isName?: boolean;
-    validator?: string | Element;
+    validator?: React.ReactNode;
     isDate?: boolean;
     date?: Date;
     isUsername?: boolean;
-    isPassword?: string;
+    isPassword?: boolean;
     setDate?: (date: Date | undefined) => void;
     pickerOpen?: boolean;
     setPickerOpen?: (open: boolean) => void;

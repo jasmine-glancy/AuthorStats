@@ -10,7 +10,7 @@ export default function projectHeader() {
             >
             <div className="hero-overlay"></div>
             <div className="text-center w-full grid grid-col">
-                <div className="w-full bg-[var(--dove_gray)]">
+                <div className="w-full bg-[var(--dove_gray)] border-t-4 border-t-double border-t-[var(--tropical_indigo)] border-b-4 border-b-double border-b-[var(--tropical_indigo)]">
                     <h1 className="mb-5 mt-5 text-5xl font-bold">Project Name</h1>
                 </div>
                 <div className="hero-content grid grid-cols-2 gap-x-[2em] mt-5">

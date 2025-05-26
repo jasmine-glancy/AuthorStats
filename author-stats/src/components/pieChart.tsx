@@ -6,6 +6,7 @@ export default function pieChart() {
     const chartRef = useRef<Chart | null>(null);
 
     const dataPie = {
+        // TODO: Change this dynamically depending on which page is using it
         labels: ["Writing", "Worldbuilding", "Marketing"],
         datasets: [
         {
@@ -51,7 +52,7 @@ export default function pieChart() {
     // TODO: Load in user's data
     return(
         <div className="rounded-[1em] flex justify-center items-center border-1 border-solid border-[var(--dark_purple)] bg-linear-to-b from-[var(--linen)] to-[var(--dove_gray)]">
-            <div className="w-[33%] mb-5">
+            <div className="w-[50%] mb-5">
                 <canvas id="chartPie"></canvas>
             </div>
         </div>

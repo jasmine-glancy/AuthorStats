@@ -12,19 +12,22 @@ export default function login() {
                     <div className="flex flex-col items-center justify-center pb-5">
                         <h2 className="font-bold pb-5">Log In</h2>
 
-                        <Input isUsername={true} validator={
+                        <fieldset className="fieldset grid gap-[2em]">
+                            <Input isUsername={true} validator={
                             <>
                             Must be 3 to 30 characters
                             <br />
                             containing only letters, numbers or dash
                             </>
-                        } placeholder="Username" />
-                        <Input isPassword={true} validator={
-                            <>
-                                Must be more than 8 characters, including:
-                                <br />At least one number <br />At least one lowercase letter <br />At least one uppercase letter
-                            </>
-                        } placeholder="Password" />
+
+                            } placeholder="Username" />
+                            <Input isPassword={true} validator={
+                                <>
+                                    Must be more than 8 characters, including:
+                                    <br />At least one number <br />At least one lowercase letter <br />At least one uppercase letter
+                                </>
+                            } placeholder="Password" />
+                        </fieldset>
                     </div>
                     <div className="flex justify-center">
                         <button className="btn-primary mb-10 mt-5">

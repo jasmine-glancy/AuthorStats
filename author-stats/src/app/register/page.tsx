@@ -12,7 +12,7 @@ export default function register() {
                     <div className="flex flex-col items-center justify-center pb-5">
                         <h2 className="font-bold pb-5">Register</h2>
 
-                        <fieldset className="fieldset">
+                        <fieldset className="fieldset grid gap-[2em]">
                             <Input isUsername={true} validator={
                                 <>
                                 Must be 3 to 30 characters
