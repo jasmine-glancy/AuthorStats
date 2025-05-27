@@ -6,6 +6,7 @@ import LineChart from "@/components/lineChart";
 import ProjectBlurb from "@/components/projectBlurb";
 import ProjectBreakdown from "@/components/projectBreakdown";
 import ProjectHeader from "@/components/projectHeader";
+import ToTopButton from "@/components/toTopButton";
 
 export default function project() {
     return (
@@ -27,6 +28,7 @@ export default function project() {
           </div>
         </div>
         <Footer />
+        <ToTopButton />
       </div>
     );
 }

@@ -1,6 +1,9 @@
+"use client";
+
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import ProjectCard from "@/components/projectCard";
+import ToTopButton from "@/components/toTopButton";
 
 export default function viewProjects() {
     return (
@@ -13,6 +16,7 @@ export default function viewProjects() {
                 </div>
             </div>
             <Footer />
+            <ToTopButton />
         </div>
     );
 }
