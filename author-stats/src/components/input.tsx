@@ -54,7 +54,7 @@ export default function input({ fieldLegend, placeholder, isOptional,
                         <legend className="fieldset-legend">{fieldLegend}</legend>
                         <button 
                             popoverTarget="rdp-popover" 
-                            className="input input-border w-[20em] p-2" 
+                            className="input input-border border-2 border-[var(--amethyst)] w-[20em] p-2" 
                             style={{ anchorName: "--rdp" } as React.CSSProperties}
                             onClick={() => setPickerOpen(!pickerOpen)}>
                             <span className="flex items-center gap-2">

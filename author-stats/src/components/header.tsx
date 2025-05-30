@@ -32,7 +32,7 @@ export default function Header() {
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-[var(--dove_gray)] rounded-box z-1 mt-3 w-52 p-2 shadow">
                             <li>
-                                <Link href="" className="justify-between active:bg-[var(--tropical_indigo)] focus:bg-[var(--tropical_indigo)]">Profile</Link>
+                                <Link href="/profile" className="justify-between active:bg-[var(--tropical_indigo)] focus:bg-[var(--tropical_indigo)]">Profile</Link>
                             </li>
                             <li className="active:bg-[var(--tropical_indigo)] focus:bg-[var(--tropical_indigo)]"><Link href="" className="justify-between active:bg-[var(--tropical_indigo)] focus:bg-[var(--tropical_indigo)]">Settings</Link></li>
                             <li className="active:bg-[var(--tropical_indigo)] focus:bg-[var(--tropical_indigo)]"><Link href="" className="justify-between active:bg-[var(--tropical_indigo)] focus:bg-[var(--tropical_indigo)]">Logout</Link></li>

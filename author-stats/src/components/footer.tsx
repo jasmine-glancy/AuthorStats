@@ -5,7 +5,7 @@ export default function footer () {
     return(
         <footer className="footer sm:footer-horizontal bg-[var(--dove_gray)] border-5 border-double border-[var(--tropical_indigo)] rounded-[2em] text-[var(--dark_purple)] mt-5 p-10">
             <aside>
-                <img src="/books.svg" alt="Books" className="w-[8em]"/>
+                <img src="/books.png" alt="Books" className="w-[8em]"/>
             </aside>
             <nav>
                 <h6 className="footer-title">Profile</h6>
