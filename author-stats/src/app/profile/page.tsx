@@ -1,6 +1,6 @@
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import ProfilePicture from "@/components/profilePicture";
+import AuthorWidget from "@/components/authorWidget";
 
 export default function profile () {
     return(
@@ -9,7 +9,7 @@ export default function profile () {
                 <Header />
                 <h2 className="text-center pb-10">Profile</h2>
                 <div className="p-10">
-                    <ProfilePicture />
+                    <AuthorWidget />
                 </div>
             </div>
             <Footer />
