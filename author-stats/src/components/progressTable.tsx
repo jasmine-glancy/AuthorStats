@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import Popup from "./popup";
 
 type TableTypes = {
     progLog?: boolean;
@@ -16,6 +17,8 @@ export default function progressTable({progLog, dailyLog, overallProgGoals}: Tab
     const dummyDate1: Date = new Date("2025-5-23")
     const dummyDate2: Date = new Date("2025-5-24")
 
+    const dialogRef = useRef<HTMLDialogElement | null>(null);
+
     const [progressTable, setProgressTable] = useState<ProgressTableTypes[]>([
         { id: 0, date: dummyDate1, wordCount: 500 },
         { id: 1, date: dummyDate1, wordCount: 250 },
@@ -26,6 +29,10 @@ export default function progressTable({progLog, dailyLog, overallProgGoals}: Tab
     const removeRow = (id: number) => {
         const updatedProgressTable = progressTable.filter((row) => row.id !== id);
         setProgressTable(updatedProgressTable);
+    };
+
+    const addEntry = () => {
+        dialogRef.current?.showModal();
     };
 
     return(
@@ -41,6 +48,14 @@ export default function progressTable({progLog, dailyLog, overallProgGoals}: Tab
                                     </th>
                                     <th className="pl-2 pt-2 pr-2 pb-2">
                                         Session Count
+                                    </th>
+                                    <th className="pl-2 pt-2 pr-2 pb-2">
+                                        <img onMouseOver={(e) => e.currentTarget.src = "/add-words-hover.svg"}
+                                        onMouseOut={(e) => e.currentTarget.src = "/add-words.svg"}
+                                        src="/add-words.svg"
+                                        alt="Add Entry"
+                                        className="w-[1.5em]" 
+                                        onClick={addEntry} />
                                     </th>
                                 </tr>
                             </thead>
@@ -58,7 +73,7 @@ export default function progressTable({progLog, dailyLog, overallProgGoals}: Tab
                                             <img onMouseOver={(e) => e.currentTarget.src = "/trash-hover.svg"}
                                                 onMouseOut={(e) => e.currentTarget.src = "/trash.svg"}
                                                 src="/trash.svg"
-                                                alt="Trash"
+                                                alt="Delete Entry"
                                                 className="w-[1.5em]" 
                                                 onClick={ () => removeRow(row.id) }/>
                                         </td>
@@ -71,6 +86,9 @@ export default function progressTable({progLog, dailyLog, overallProgGoals}: Tab
                     <div></div>
                 )
             }
+
+            <Popup reference={dialogRef}/>
+
             {
                 dailyLog ? (
                     <table className="rounded-[1em] border-1 text-center border-solid border-[var(--dark_purple)] bg-linear-to-b from-[var(--linen)] to-[var(--dove_gray)] border-separate">

@@ -11,27 +11,33 @@ type inputTypes = {
     isName?: boolean;
     validator?: React.ReactNode;
     isDate?: boolean;
+    isTime?: boolean;
     date?: Date;
     isUsername?: boolean;
     isPassword?: boolean;
     setDate?: (date: Date | undefined) => void;
     pickerOpen?: boolean;
     setPickerOpen?: (open: boolean) => void;
+    isFillable?: boolean;
+    listType?: string;
+    options?: string[];
 }
 
 export default function input({ fieldLegend, placeholder, isOptional, 
                                 isNumber, isName, validator, 
-                                isDate, date, isUsername,
+                                isDate, isTime, date, isUsername,
                                 isPassword, setDate, pickerOpen, 
-                                setPickerOpen }: inputTypes) {
+                                setPickerOpen, isFillable, 
+                                listType, options }: inputTypes) {
     return(
-        <fieldset>
+        <fieldset className="fieldset">
             {isNumber ? (
                 <>
                     <legend className="fieldset-legend">{fieldLegend}</legend>
                     <input
                     type="number"
-                    className="input validator w-[20em]"
+                    className="input validator text-center w-[20em]"
+                    min={1}
                     required
                     placeholder={placeholder}
                     />
@@ -42,7 +48,7 @@ export default function input({ fieldLegend, placeholder, isOptional,
                         <legend className="fieldset-legend">{fieldLegend}</legend>
                         <input
                         type="text"
-                        className="input validator w-[20em]"
+                        className="input validator text-center w-[20em]"
                         required
                         placeholder={placeholder}
                         />
@@ -54,11 +60,11 @@ export default function input({ fieldLegend, placeholder, isOptional,
                         <legend className="fieldset-legend">{fieldLegend}</legend>
                         <button 
                             popoverTarget="rdp-popover" 
-                            className="input input-border border-2 border-[var(--amethyst)] w-[20em] p-2" 
+                            className="input input-border text-center border-2 border-[var(--amethyst)] w-[20em] p-2" 
                             style={{ anchorName: "--rdp" } as React.CSSProperties}
                             onClick={() => setPickerOpen(!pickerOpen)}>
-                            <span className="flex items-center gap-2">
-                                <img src="/calendar.svg" alt="calendar" className="w-[2em] inline" />
+                            <span className="flex items-center text-center gap-2">
+                                <img src="/calendar.svg" alt="calendar" className="w-[2em] inline justify-center" />
                                 {date ? date.toLocaleDateString() : "Pick a Date"}
                             </span>
                         </button>
@@ -80,7 +86,7 @@ export default function input({ fieldLegend, placeholder, isOptional,
                 ) : isUsername? (
                     <>
                     <label className="input validator">
-                        <svg className="h-[1.5em] opacity-50 text-[var(--tropical_indigo)]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <svg className="h-[1.5em] text-center opacity-50 text-[var(--tropical_indigo)]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <g
                             strokeLinejoin="round"
                             strokeLinecap="round"
@@ -110,7 +116,7 @@ export default function input({ fieldLegend, placeholder, isOptional,
                 ) : isPassword ? (
                     <>
                         <label className="input validator">
-                        <svg className="h-[1.5em] opacity-50 text-[var(--tropical_indigo)]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <svg className="h-[1.5em] text-center opacity-50 text-[var(--tropical_indigo)]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <g
                             strokeLinejoin="round"
                             strokeLinecap="round"
@@ -138,10 +144,37 @@ export default function input({ fieldLegend, placeholder, isOptional,
                             {validator}
                         </p>
                     </>
+                ) : isFillable ? (
+                    <>
+                        <legend className="fieldset-legend">{fieldLegend}</legend>
+                        <input
+                        type="text"
+                        list={listType}
+                        className="input w-[20em] input-border text-center border-2 border-[var(--amethyst)] bg-[url('/arrow-down.svg')] bg-[length:2em_2em] bg-no-repeat bg-right pl-15"
+                        />                        
+                        <datalist id={listType}>
+                            {
+                                options?.map(option => (
+                                    <option key={option} value={option}>{option}</option>
+                                ))
+                            }
+                        </datalist>
+                        <p className="validator-hint">{validator}</p>
+                    </>
+                ) : isTime ? (
+                    <>
+                        <legend className="fieldset-legend">{fieldLegend}</legend>
+                        <input type="time" 
+                            className="input input-border border-2 border-[var(--amethyst)] w-[20em] text-center pr-10" 
+                        /> 
+                        <p className="validator-hint">{validator}</p>
+                    </>
                 ) : ( 
                     <>
                         <legend className="fieldset-legend">{fieldLegend}</legend>
-                        <input type="text" className="input w-[20em]" placeholder={placeholder} />
+                        <input type="text" 
+                            className="input w-[20em] text-center pr-10" 
+                            placeholder={placeholder} /> 
                         <p className="validator-hint">{validator}</p>
                     </>
                 )

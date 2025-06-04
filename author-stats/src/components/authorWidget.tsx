@@ -20,10 +20,14 @@ export default function authorWidget () {
                                 <span className="text-[var(--amethyst)] pl-[0.4em] underline">Trial by Blood</span>
                             </div>
                         </div>
-                        <div className="flex inline-flex">
+                        <div className="flex inline-flex pb-1">
                             A <span className="text-[var(--amethyst)] pl-[0.4em] pr-[0.4em]">world-builder</span> 
                             specializing in 
-                            <span className="text-[var(--amethyst)] pl-[0.4em] pr-[0.4em]">dark fantasy</span>
+                            <span className="text-[var(--amethyst)] pl-[0.4em]">dark fantasy</span>
+                        </div>
+                        <div className="flex inline-flex">
+                            Inspired by
+                            <span className="text-[var(--amethyst)] pl-[0.4em] pr-[0.4em]">K.A. Applegate</span>
                         </div>
                         <p className="items-center text-center pt-2">Member since 2025</p>
                     </div>

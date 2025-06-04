@@ -52,7 +52,8 @@ export default function addProject() {
                         <div className="col-span-2 flex justify-center pb-5">
                             <Select 
                                 name="What genre is your project?"
-                                options={["Action/Adventure", "Children's Fiction", "Classic Fiction", "Contemporary Fiction", "Fantasy", "Dark Fantasy", "Fairy Tales", "Folktales", "Heroic Fantasy", "High Fantasy", "Historical Fantasy", "Low Fantasy", "Magical Realism", "Mythic Fantasy", "Urban Fantasy"]} />
+                                options={["Action/Adventure", "Children's Fiction", "Classic Fiction", "Contemporary Fiction", "Fantasy", "Dark Fantasy", "Fairy Tales", "Folktales", "Heroic Fantasy", "High Fantasy", "Historical Fantasy", "Low Fantasy", "Magical Realism", "Mythic Fantasy", "Urban Fantasy"]}
+                                defaultValue="Please make a selection" />
                         </div>
                     </div>
                     <button className="btn-primary mb-10 mt-5">
