@@ -9,7 +9,7 @@ export default function authorWidget () {
                 </figure>
                 <div className="card-body">
                     <h2 className="items-center text-center">Typewriter Humblebrag</h2>
-                    <div className="pl-5">
+                    <div className="pl-10">
                         <div className="grid">
                             <div className="flex inline-flex pb-1">
                                 <span className="text-[var(--amethyst)] pr-[0.4em]">2</span> projects
@@ -29,8 +29,8 @@ export default function authorWidget () {
                             Inspired by
                             <span className="text-[var(--amethyst)] pl-[0.4em] pr-[0.4em]">K.A. Applegate</span>
                         </div>
-                        <p className="items-center text-center pt-2">Member since 2025</p>
                     </div>
+                    <p className="items-center text-center pt-2">Member since 2025</p>
                 </div>
             </div>
         </div>

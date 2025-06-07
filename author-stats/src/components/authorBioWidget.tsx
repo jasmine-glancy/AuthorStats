@@ -1,7 +1,7 @@
 
 export default function authorBioWidget() {
     return (
-      <div className="card bg-[var(--linen)] shadow-lg p-10 w-[28em]">
+      <div className="">
         <h2 className="text-[var(--tropical_indigo)] font-bold text-center pb-2">Biography</h2>
         Venmo umami brunch trust fund drinking vinegar, offal fit occupy
         scenester wayfarers neutral milk hotel try-hard wolf activated charcoal.
