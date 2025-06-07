@@ -5,7 +5,7 @@ export default function projectCard() {
   return (
     <div>
       <Link href="/project">
-        <div className="hover:cursor-pointer card w-[29em] bg-linear-to-b from-[var(--linen)] to-[var(--dove_gray)] card-xl shadow-sm m-5">
+        <div className="hover:cursor-pointer shadow-xl card w-[29em] bg-linear-to-b from-[var(--linen)] to-[var(--dove_gray)] card-xl shadow-sm m-5">
           <div className="card-body">
             <div className="flex justify-center">
               <progress

@@ -3,7 +3,7 @@ import ProfilePicture from "@/components/profilePicture";
 export default function authorWidget () {
     return(
         <div>
-            <div className="card bg-[var(--linen)] w-[22em] shadow-lg">
+            <div className="card bg-[var(--linen)] w-[29em] shadow-lg">
                 <figure className="px-10 pt-10">
                     <ProfilePicture />
                 </figure>
