@@ -1,5 +1,18 @@
-import { Chart, ChartConfiguration } from "chart.js";
+import {
+  Chart,
+  LineController,
+  LineElement,
+  PointElement,
+  CategoryScale,
+  LinearScale,
+  ChartConfiguration,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 import { useEffect, useRef } from "react";
+
+Chart.register(LineController, LineElement, PointElement, CategoryScale, LinearScale, Title, Tooltip, Legend);
 
 export default function lineChart() {
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Header() {
     return(
-        <div className="navbar inline-flex relative pl-[60%] mb-5">
+        <div className="navbar inline-flex relative pl-[60%]">
             <div className="grid justify-center items-center">
                 <h1 className="pt-5 pr-10 font-bold underline decoration-solid">Author Stats</h1>   
                 
