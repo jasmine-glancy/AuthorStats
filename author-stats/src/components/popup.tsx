@@ -24,16 +24,14 @@ export default function Popup({ reference }: PopupProps) {
                         />
                     </div>
                     <div className="grid grid-cols-2">
-                        <Input
+                        <Select
                             isFillable={true}
                             fieldLegend="Where were you working?"
-                            listType="locations"
                             options={["Library", "Office", "Home", "School", "Cafe"]}
                         />
-                        <Input
+                        <Select
                             isFillable={true}
                             fieldLegend="How were you working?"
-                            listType="tools"
                             options={["Laptop Computer", "Phone", "Pencil and Paper", "Desktop Computer"]}
                         />
                         <Input

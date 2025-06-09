@@ -18,17 +18,13 @@ type inputTypes = {
     setDate?: (date: Date | undefined) => void;
     pickerOpen?: boolean;
     setPickerOpen?: (open: boolean) => void;
-    isFillable?: boolean;
-    listType?: string;
-    options?: string[];
 }
 
 export default function input({ fieldLegend, placeholder, isOptional, 
                                 isNumber, isName, validator, 
                                 isDate, isTime, date, isUsername,
                                 isPassword, setDate, pickerOpen, 
-                                setPickerOpen, isFillable, 
-                                listType, options }: inputTypes) {
+                                setPickerOpen }: inputTypes) {
     return(
         <fieldset className="fieldset">
             {isNumber ? (
@@ -143,23 +139,6 @@ export default function input({ fieldLegend, placeholder, isOptional,
                         <p className="validator-hint hidden">
                             {validator}
                         </p>
-                    </>
-                ) : isFillable ? (
-                    <>
-                        <legend className="fieldset-legend">{fieldLegend}</legend>
-                        <input
-                        type="text"
-                        list={listType}
-                        className="input w-[20em] input-border text-center border-2 border-[var(--amethyst)] bg-[url('/arrow-down.svg')] bg-[length:2em_2em] bg-no-repeat bg-right pl-15"
-                        />                        
-                        <datalist id={listType}>
-                            {
-                                options?.map(option => (
-                                    <option key={option} value={option}>{option}</option>
-                                ))
-                            }
-                        </datalist>
-                        <p className="validator-hint">{validator}</p>
                     </>
                 ) : isTime ? (
                     <>
