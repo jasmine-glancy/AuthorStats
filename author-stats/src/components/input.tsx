@@ -32,7 +32,7 @@ export default function input({ fieldLegend, placeholder, isOptional,
                     <legend className="fieldset-legend">{fieldLegend}</legend>
                     <input
                     type="number"
-                    className="input validator text-center w-[20em]"
+                    className="input validator text-center w-[20em] h-[3em]"
                     min={1}
                     required
                     placeholder={placeholder}

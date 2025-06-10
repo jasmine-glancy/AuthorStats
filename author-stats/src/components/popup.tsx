@@ -1,17 +1,27 @@
 
-import Input from "./input";
-import Select from "./select";
+import Collapse from "./collapse";
 import LogMood from "./logMood";
+import Select from "./select";
+import { useEffect, useState } from "react";
 
 type PopupProps = {
   reference: React.RefObject<HTMLDialogElement | null>;
 };
 
 export default function Popup({ reference }: PopupProps) {
+    const [selectedValue, setSelectedValue] = useState("");
+
+    const handleCollapseSelectChange = (selected: { value: string; label: string } | null) => {
+        // Render an empty string if selected?.value is undefined
+        setSelectedValue(selected?.value ?? "");
+        console.log(selected?.value);
+    }
+    // Input options change based on option
+
     return(
         <div>
             <dialog ref={reference} className="modal">
-                <div className="modal-box max-w-[40em]">
+                <div className="modal-box max-w-[40em] min-h-[30em]">
                     {/* TODO: If user was researching, ask for time instead of words */}
                     <h3 className="font-bold text-lg text-center text-[var(--tropical_indigo)]">Add Session</h3>
                     <h4 className="text-center pb-2">How did you feel while creating?</h4>
@@ -20,37 +30,15 @@ export default function Popup({ reference }: PopupProps) {
                         <Select
                             name="What did you work on?"
                             options={["Writing", "World-Building", "Character Development", "Research"]}
-                            defaultValue="Please make a selection"
+                            dynamicSelect={true}
+                            onChange={handleCollapseSelectChange}
                         />
                     </div>
-                    <div className="grid grid-cols-2">
-                        <Select
-                            isFillable={true}
-                            fieldLegend="Where were you working?"
-                            options={["Library", "Office", "Home", "School", "Cafe"]}
-                        />
-                        <Select
-                            isFillable={true}
-                            fieldLegend="How were you working?"
-                            options={["Laptop Computer", "Phone", "Pencil and Paper", "Desktop Computer"]}
-                        />
-                        <Input
-                            isNumber={true}
-                            placeholder="Word Count"
-                        />
-                        <Select
-                            options={["words this session", "total words"]}
-                            defaultValue="words this session"
-                        />
-                        <Input
-                            isTime={true}
-                            fieldLegend="When did you start?"
-                        />
-                        <Input
-                            isTime={true}
-                            fieldLegend="When did you end?"
-                        />
-                    </div>
+                    {selectedValue === "Writing" && <Collapse selectedValue="Writing" />}
+                    {selectedValue === "World-Building" && <Collapse selectedValue="World-Building" />}
+                    {selectedValue === "Character Development" && <Collapse selectedValue="Character Development" />}
+                    {selectedValue === "Research" && <Collapse selectedValue="Research" />}
+
                     <div className="flex justify-center">
                         <form method="dialog">
                             <button className="btn">Close</button>
