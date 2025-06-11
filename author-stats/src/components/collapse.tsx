@@ -19,6 +19,7 @@ export default function collapse({ selectedValue }: CollapseProps) {
                         More Options...
                 </div>                    
                 <div className="collapse-content grid grid-cols-2 gap-[2%]">
+
                     <Select
                         isFillable={true}
                         fieldLegend="Where were you working?"
@@ -29,7 +30,7 @@ export default function collapse({ selectedValue }: CollapseProps) {
                         fieldLegend="How were you working?"
                         options={["Laptop Computer", "Phone", "Pencil and Paper", "Desktop Computer"]}
                     />
-                    {(selectedValue === "Writing" || selectedValue === "World-Building") && (
+                    {(selectedValue === "Writing" || selectedValue === "World-Building" || selectedValue === "Research") && (
                         <>
                             <Input
                                 isNumber={true}
@@ -42,18 +43,6 @@ export default function collapse({ selectedValue }: CollapseProps) {
                         </>
                     )}
                     {(selectedValue === "Character Development") && 
-                        <>
-                            <Input
-                                isNumber={true}
-                                placeholder="Number of Characters"
-                            />
-                            <Select
-                                options={["worked on this session", "created this session"]}
-                                defaultValue="worked on this session"
-                            />
-                        </>
-                    }
-                    {(selectedValue === "Research") && 
                         <>
                             <Input
                                 isNumber={true}
