@@ -1,24 +1,33 @@
 
 
-import CreatableSelect from 'react-select/creatable';
-import Select from 'react-select';
+import CreatableSelect from "react-select/creatable";
+import Select from "react-select";
+import { useEffect, useState } from "react";
+import Loading from "@/components/loading";
 
+type OptionType = { value: string; label: string; isDisabled?: boolean };
 
 type SelectTypes = {
     name?: string;
-    options: string[];
+    options: OptionType[];
     isFillable?: boolean;
     defaultValue?: string;
     fieldLegend?: string;
     validator?: React.ReactNode;
     dynamicSelect?: boolean | true;
     onChange?: (selected: { value: string; label: string } | null) => void;
+    selectId: string;
 }
 
+
 export default function select({ name, options, defaultValue, onChange,
-                                 isFillable, fieldLegend, validator, dynamicSelect }: SelectTypes) {
-    const optionObjects = options.map(option => ({ value: option, label: option }));
-    const selectedOption = optionObjects.find(opt => opt.value === defaultValue);
+                                 isFillable, fieldLegend, validator, dynamicSelect, selectId }: SelectTypes) {
+    const selectedOption = options.find(opt => opt.value === defaultValue);
+    const [mounted, setMounted] = useState(false);
+
+    // Renders the component only after it is mounted in the browser
+    useEffect(() => setMounted(true), []);
+    if (!mounted) return <Loading />;
 
     return(
         <>
@@ -27,6 +36,8 @@ export default function select({ name, options, defaultValue, onChange,
                         <legend className="fieldset-legend">{fieldLegend}</legend>
 
                         <CreatableSelect 
+                            id={selectId}
+                            options={options}
                             className="w-[23.25em] input-border text-[var(--dark_purple)] text-center rounded-sm border-2 border-[var(--amethyst)] bg-[length:2em_2em] bg-no-repeat bg-right"
                             options={options.map(option => ({ value: option, label: option }))}
                             theme={(theme) => ({
@@ -56,7 +67,8 @@ export default function select({ name, options, defaultValue, onChange,
                         <legend className="fieldset-legend">{name}</legend>
                         <Select 
                             className="w-[23em] input-border text-[var(--dark_purple)] text-center rounded-sm border-2 border-[var(--amethyst)] bg-[length:2em_2em] bg-no-repeat bg-right"
-                            options={optionObjects}
+                            id={selectId}
+                            options={options}
                             defaultValue={selectedOption}
                             onChange={onChange}
                             theme={(theme) => ({
@@ -86,7 +98,8 @@ export default function select({ name, options, defaultValue, onChange,
                         <legend className="fieldset-legend">{name}</legend>
                         <Select 
                             className="w-[23em] input-border text-[var(--dark_purple)] text-center rounded-sm border-2 border-[var(--amethyst)] bg-[length:2em_2em] bg-no-repeat bg-right"
-                            options={optionObjects}
+                            options={options}
+                            id={selectId}
                             defaultValue={selectedOption}
                             theme={(theme) => ({
                             ...theme,

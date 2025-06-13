@@ -22,17 +22,20 @@ export default function addProject() {
                     <div className="grid grid-cols-2 pt-5 gap-x-[5em]">
                         <Input 
                             fieldLegend="What is your project called?"
+                            inputId="projectName"
                             placeholder="Or enter unsure if you are unsure"
                             isNumber={false}
                             isName={true}
                             validator="Please enter a value" />
                         <Input 
                             fieldLegend="What is your word count goal?"
+                            inputId="wordCountGoal"
                             placeholder="50,000"
                             isNumber={true}
                             validator="Please enter a number" />
                         <Input 
                             fieldLegend="What is your start date?"
+                            inputId="startDate"
                             validator="Please choose a date"
                             isDate={true}
                             date={startDate}
@@ -41,6 +44,7 @@ export default function addProject() {
                             setPickerOpen={setStartPickerOpen} />
                         <Input
                             fieldLegend="What is your end date?"
+                            inputId="endDate"
                             validator="Please choose a date" 
                             isDate={true}
                             date={endDate}
@@ -49,12 +53,53 @@ export default function addProject() {
                             setPickerOpen={setEndPickerOpen} />
 
                         {/* TODO: Load in genres from MongoDB's database */}
-                        <div className="col-span-2 flex justify-center pb-5">
-                            <Select 
-                                name="What genre is your project?"
-                                options={["Action/Adventure", "Children's Fiction", "Classic Fiction", "Contemporary Fiction", "Fantasy", "Dark Fantasy", "Fairy Tales", "Folktales", "Heroic Fantasy", "High Fantasy", "Historical Fantasy", "Low Fantasy", "Magical Realism", "Mythic Fantasy", "Urban Fantasy"]}
-                                defaultValue="Please make a selection" />
-                        </div>
+                        <Select 
+                            name="What is the primary genre of your project?"
+                            selectId="primaryGenre"
+                            options={
+                                [
+                                    { value: "Action/Adventure", label: "Action/Adventure" },
+                                    { value: "Children's Fiction", label: "Children's Fiction" },
+                                    { value: "Classic Fiction", label: "Classic Fiction" },
+                                    { value: "Contemporary Fiction", label: "Contemporary Fiction" },
+                                    { value: "Fantasy", label: "Fantasy" },
+                                    { value: "Dark Fantasy", label: "Dark Fantasy" },
+                                    { value: "Fairy Tales", label: "Fairy Tales" },
+                                    { value: "Folktales", label: "Folktales" },
+                                    { value: "Heroic Fantasy", label: "Heroic Fantasy" },
+                                    { value: "High Fantasy", label: "High Fantasy" },
+                                    { value: "Historical Fantasy", label: "Historical Fantasy" },
+                                    { value: "Low Fantasy", label: "Low Fantasy" },
+                                    { value: "Magical Realism", label: "Magical Realism" },
+                                    { value: "Mythic Fantasy", label: "Mythic Fantasy" },
+                                    { value: "Urban Fantasy", label: "Urban Fantasy" }
+                                ]
+                            }
+                            defaultValue="Please make a selection" />
+                        <Select 
+                            name="Does your project have a secondary genre?"
+                            selectId="secondaryGenre"
+                            options={
+                                [
+                                    { value: "Action/Adventure", label: "Action/Adventure" },
+                                    { value: "Children's Fiction", label: "Children's Fiction" },
+                                    { value: "Classic Fiction", label: "Classic Fiction" },
+                                    { value: "Contemporary Fiction", label: "Contemporary Fiction" },
+                                    { value: "Fantasy", label: "Fantasy" },
+                                    { value: "Dark Fantasy", label: "Dark Fantasy" },
+                                    { value: "Fairy Tales", label: "Fairy Tales" },
+                                    { value: "Folktales", label: "Folktales" },
+                                    { value: "Heroic Fantasy", label: "Heroic Fantasy" },
+                                    { value: "High Fantasy", label: "High Fantasy" },
+                                    { value: "Historical Fantasy", label: "Historical Fantasy" },
+                                    { value: "Low Fantasy", label: "Low Fantasy" },
+                                    { value: "Magical Realism", label: "Magical Realism" },
+                                    { value: "Mythic Fantasy", label: "Mythic Fantasy" },
+                                    { value: "Urban Fantasy", label: "Urban Fantasy" }
+                                ]
+                            }
+                            defaultValue="Please make a selection" />
+                        
                     </div>
                     <button className="btn-primary mb-10 mt-5">
                         Add Project

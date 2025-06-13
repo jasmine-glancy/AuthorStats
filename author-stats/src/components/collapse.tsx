@@ -22,22 +22,47 @@ export default function collapse({ selectedValue }: CollapseProps) {
 
                     <Select
                         isFillable={true}
+                        selectId="workLocations"
                         fieldLegend="Where were you working?"
-                        options={["Library", "Office", "Home", "School", "Cafe"]}
+                        options={
+                            [
+                                { value: "Library", label: "Library" },
+                                { value: "Office", label: "Office" },
+                                { value: "Home", label: "Home" },
+                                { value: "School", label: "School" },
+                                { value: "Cafe", label: "Cafe" }
+                            ]
+                        }
                     />
                     <Select
                         isFillable={true}
+                        selectId="workTools"
                         fieldLegend="How were you working?"
-                        options={["Laptop Computer", "Phone", "Pencil and Paper", "Desktop Computer"]}
+                        options={
+                            [
+                                { value: "Laptop Computer", label: "Laptop Computer" },
+                                { value: "Phone", label: "Phone" },
+                                { value: "Home", label: "Home" },
+                                { value: "Pencil and Paper", label: "Pencil and Paper" },
+                                { value: "Desktop Computer", label: "Desktop Computer" }
+                            ]
+                        }
                     />
                     {(selectedValue === "Writing" || selectedValue === "World-Building" || selectedValue === "Research") && (
                         <>
                             <Input
                                 isNumber={true}
+                                inputId="wordCount"
                                 placeholder="Word Count"
                             />
                             <Select
-                                options={["words this session", "total words"]}
+                                selectId="wordTotal"
+                                options={
+                                    [
+                                        { value: "words this session", label: "words this session" },
+                                        { value: "total words", label: "total words" }
+                                    ]
+                                }
                                 defaultValue="words this session"
                             />
                         </>
@@ -46,20 +71,29 @@ export default function collapse({ selectedValue }: CollapseProps) {
                         <>
                             <Input
                                 isNumber={true}
+                                inputId="numChars"
                                 placeholder="Number of Characters"
                             />
-                            <Select
-                                options={["worked on this session", "created this session"]}
+                            <Select 
+                                selectId="wordTotal"
+                                options={
+                                    [
+                                        { value: "worked on this session", label: "worked on this session" },
+                                        { value: "created this session", label: "created this session" }
+                                    ]
+                                }
                                 defaultValue="worked on this session"
                             />
                         </>
                     }
                     <Input
                         isTime={true}
+                        inputId="startTime"
                         fieldLegend="When did you start?"
                     />
                     <Input
                         isTime={true}
+                        inputId="endTime"
                         fieldLegend="When did you end?"
                     />
                 </div>

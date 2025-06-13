@@ -18,13 +18,14 @@ type inputTypes = {
     setDate?: (date: Date | undefined) => void;
     pickerOpen?: boolean;
     setPickerOpen?: (open: boolean) => void;
+    inputId: string;
 }
 
 export default function input({ fieldLegend, placeholder, isOptional, 
                                 isNumber, isName, validator, 
                                 isDate, isTime, date, isUsername,
                                 isPassword, setDate, pickerOpen, 
-                                setPickerOpen }: inputTypes) {
+                                setPickerOpen, inputId }: inputTypes) {
     return(
         <fieldset className="fieldset">
             {isNumber ? (
@@ -32,6 +33,7 @@ export default function input({ fieldLegend, placeholder, isOptional,
                     <legend className="fieldset-legend">{fieldLegend}</legend>
                     <input
                     type="number"
+                    id={inputId}
                     className="input validator text-center w-[20em] h-[3em]"
                     min={1}
                     required
@@ -44,6 +46,7 @@ export default function input({ fieldLegend, placeholder, isOptional,
                         <legend className="fieldset-legend">{fieldLegend}</legend>
                         <input
                         type="text"
+                        id={inputId}
                         className="input validator text-center w-[20em]"
                         required
                         placeholder={placeholder}
@@ -95,7 +98,8 @@ export default function input({ fieldLegend, placeholder, isOptional,
                             </g>
                         </svg>
                         <input
-                            type="text"
+                            type="text" 
+                            id={inputId}
                             required
                             placeholder={placeholder}
                             pattern="[A-Za-z][A-Za-z0-9\-]*"
@@ -128,6 +132,7 @@ export default function input({ fieldLegend, placeholder, isOptional,
                         </svg>
                         <input
                             type="password"
+                            id={inputId}
                             required
                             placeholder={placeholder}
                             minLength={8}
@@ -143,7 +148,8 @@ export default function input({ fieldLegend, placeholder, isOptional,
                 ) : isTime ? (
                     <>
                         <legend className="fieldset-legend">{fieldLegend}</legend>
-                        <input type="time" 
+                        <input type="time"  
+                            id={inputId}
                             className="input input-border border-2 border-[var(--amethyst)] w-[20em] text-center pr-10" 
                         /> 
                         <p className="validator-hint">{validator}</p>
@@ -152,6 +158,7 @@ export default function input({ fieldLegend, placeholder, isOptional,
                     <>
                         <legend className="fieldset-legend">{fieldLegend}</legend>
                         <input type="text" 
+                            id={inputId}
                             className="input w-[20em] text-center pr-10" 
                             placeholder={placeholder} /> 
                         <p className="validator-hint">{validator}</p>

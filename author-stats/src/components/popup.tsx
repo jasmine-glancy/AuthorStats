@@ -28,8 +28,18 @@ export default function Popup({ reference }: PopupProps) {
                     <LogMood />
                     <div className="flex justify-center">
                         <Select
+                            defaultValue="Please make a selection"
+                            selectId="workedOn"
                             name="What did you work on?"
-                            options={["Writing", "World-Building", "Character Development", "Research"]}
+                            options={
+                                [
+                                    { value: "Please make a selection", label: "Please Make a Selection", isDisabled: true },
+                                    { value: "Writing", label: "Writing" },
+                                    { value: "World-Building", label: "World-Building" },
+                                    { value: "Character Development", label: "Character Development" },
+                                    { value: "Research", label: "Research" }
+                                ]
+                            }
                             dynamicSelect={true}
                             onChange={handleCollapseSelectChange}
                         />

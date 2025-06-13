@@ -13,21 +13,21 @@ export default function register() {
                         <h2 className="font-bold pb-5">Register</h2>
 
                         <fieldset className="fieldset grid gap-[2em]">
-                            <Input isUsername={true} validator={
+                            <Input isUsername={true} inputId="username" validator={
                                 <>
                                 Must be 3 to 30 characters
                                 <br />
                                 containing only letters, numbers or dash
                                 </>
                             } placeholder="Username" />
-                            <Input isPassword={true} validator={
+                            <Input isPassword={true} inputId="password" validator={
                                 <>
                                     Must be more than 8 characters, including:
                                     <br />At least one number <br />At least one lowercase letter <br />At least one uppercase letter
                                 </>
                             } placeholder="Password" />
 
-                            <Input isPassword={true} validator={
+                            <Input isPassword={true} inputId="passwordConfirmation" validator={
                                 <>
                                     Password does not match
                                 </>
