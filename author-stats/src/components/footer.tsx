@@ -21,7 +21,7 @@ export default function footer () {
             </nav>
             <nav>
                 <h6 className="footer-title">Company</h6>
-                <Link href="" className="link link-hover">About Us</Link>
+                <Link href="/about-us" className="link link-hover">About Us</Link>
                 <Link href="" className="link link-hover">Contact Us</Link>
             </nav>
 
