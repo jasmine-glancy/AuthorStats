@@ -39,7 +39,6 @@ export default function select({ name, options, defaultValue, onChange,
                             id={selectId}
                             options={options}
                             className="w-[23.25em] input-border text-[var(--dark_purple)] text-center rounded-sm border-2 border-[var(--amethyst)] bg-[length:2em_2em] bg-no-repeat bg-right"
-                            options={options.map(option => ({ value: option, label: option }))}
                             theme={(theme) => ({
                             ...theme,
                             borderRadius: 0,
@@ -59,7 +58,7 @@ export default function select({ name, options, defaultValue, onChange,
                                 marginLeft: "auto",
                                 marginRight: "auto",
                                 })
-                            }}  />        
+                            }} />        
                         <p className="validator-hint">{validator}</p>
                     </fieldset>
                 ) : dynamicSelect ? (

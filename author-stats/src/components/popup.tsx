@@ -44,14 +44,16 @@ export default function Popup({ reference }: PopupProps) {
                             onChange={handleCollapseSelectChange}
                         />
                     </div>
-                    {selectedValue === "Writing" && <Collapse selectedValue="Writing" />}
-                    {selectedValue === "World-Building" && <Collapse selectedValue="World-Building" />}
-                    {selectedValue === "Character Development" && <Collapse selectedValue="Character Development" />}
-                    {selectedValue === "Research" && <Collapse selectedValue="Research" />}
+                    <div className="pb-[4.5em]">
+                        {selectedValue === "Writing" && <Collapse selectedValue="Writing" />}
+                        {selectedValue === "World-Building" && <Collapse selectedValue="World-Building" />}
+                        {selectedValue === "Character Development" && <Collapse selectedValue="Character Development" />}
+                        {selectedValue === "Research" && <Collapse selectedValue="Research" />}
 
-                    <div className="flex justify-center">
+                    </div>
+                    <div className="flex justify-center mr-[3.5em]">
                         <form method="dialog">
-                            <button className="btn">Close</button>
+                            <button className="items-center btn mb-[2em] bottom-[1em] absolute">Close</button>
                         </form>
                     </div>
                 </div>
