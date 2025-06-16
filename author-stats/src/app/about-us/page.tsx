@@ -1,6 +1,7 @@
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import AboutBanner from "@/components/aboutBanner";
+import LeftImageHero from "@/components/leftImageHero";
 
 export default function aboutUs () {
     return(
@@ -11,7 +12,7 @@ export default function aboutUs () {
                     <AboutBanner />
                 <h1 className="text-center underline pb-[1em]">About Us</h1>
                 </div>
-                
+                <LeftImageHero />
             </div>
             <Footer />
         </div>
