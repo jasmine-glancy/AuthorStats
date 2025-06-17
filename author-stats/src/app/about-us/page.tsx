@@ -2,6 +2,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import AboutBanner from "@/components/aboutBanner";
 import LeftImageHero from "@/components/leftImageHero";
+import RightImageHero from "@/components/rightImageHero";
 
 export default function aboutUs () {
     return(
@@ -13,6 +14,7 @@ export default function aboutUs () {
                 <h1 className="text-center underline pb-[1em]">About Us</h1>
                 </div>
                 <LeftImageHero />
+                <RightImageHero />
             </div>
             <Footer />
         </div>
